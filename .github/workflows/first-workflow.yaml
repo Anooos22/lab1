@@ -1,13 +1,22 @@
-name: first workflow
-on:
-  push:
+name : first workflow
+on :
+  push :
     branches:
       - "main"
 jobs:
-  First-workflow-job:
+  first-workflow-job:
     name: first job
     runs-on: ubuntu-latest
-    steps:
-      - name: run bash command
-        run: echo "welcome to Egypt"
+    steps :
+      - name: before
+        run: ls
         shell: bash
+
+      - name: run checkout
+        uses: actions/checkout@v3
+        
+      - name: after
+        run: ls
+        shell: bash
+
+
